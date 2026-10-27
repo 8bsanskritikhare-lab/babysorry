@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Karan ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;600&display=swap');
+
+:root {
+    --pink: #f4cbd5;
+    --blush: #fff0f3;
+    --blue: #dcecf8;
+    --ink: #493a45;
+    --muted: #8b7884;
+    --paper: #fffaf8;
+    --rose: #b56b87;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    overflow-x: hidden;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 6%;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    color: var(--rose);
+}
+
+.nav-note {
+    color: var(--muted);
+    font-size: 0.75rem;
+    text-align: right;
+}
+
+.hero {
+    min-height: 75vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(140deg, #fff0f3, #eaf4fc);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.eyebrow {
+    color: var(--rose);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+h1 {
+    font: 500 clamp(2.7rem, 10vw, 6rem)/1.08
+          'Playfair Display', serif;
+    margin: 22px 0;
+    overflow-wrap: anywhere;
+}
+
+h1 em {
+    color: #c47d99;
+}
+
+.subtitle {
+    max-width: 520px;
+    margin: auto;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.primary,
+.secondary {
+    display: inline-block;
+    margin-top: 22px;
+    border: 0;
+    border-radius: 999px;
+    padding: 14px 22px;
+    background: var(--ink);
+    color: white;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.secondary {
+    background: white;
+    color: var(--rose);
+    border: 1px solid var(--pink);
+}
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 65px 6%;
+}
+
+.section-head {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.kicker {
+    color: var(--rose);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+}
+
+h2 {
+    font: 500 clamp(2rem, 7vw, 3.5rem)
+          'Playfair Display', serif;
+    margin: 12px 0;
+}
+
+.section-head p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.panel {
+    background: white;
+    border: 1px solid #f0dfe4;
+    border-radius: 22px;
+    padding: clamp(20px, 5vw, 40px);
+    box-shadow: 0 12px 35px #493a450b;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.photo-card {
+    background: white;
+    border: 1px solid #f0dfe4;
+    border-radius: 16px;
+    padding: 12px;
+    min-width: 0;
+}
+
+.photo-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 10px;
+    display: none;
+}
+
+.photo-placeholder {
+    min-height: 180px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fae3e9, #e3effa);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 15px;
+    color: var(--rose);
+}
+
+.photo-card input {
+    width: 100%;
+    margin-top: 12px;
+    font-size: 0.78rem;
+}
+
+.caption {
+    font: 1.35rem 'Caveat', cursive;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.note-band {
+    background: var(--blue);
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.note-band blockquote {
+    font: italic clamp(1.5rem, 5vw, 2.6rem)/1.5
+          'Playfair Display', serif;
+    max-width: 750px;
+    margin: 18px auto;
+}
+
+.note-band span {
+    font: 1.5rem 'Caveat', cursive;
+    color: #6587a5;
+}
+
+.song-panel {
+    text-align: center;
+}
+
+.song-panel p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.song-panel input {
+    max-width: 100%;
+    margin: 15px auto;
+}
+
+audio {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.letter-wrap {
+    max-width: 760px;
+    margin: auto;
+    background: white;
+    border: 1px solid #f0dfe4;
+    border-radius: 22px;
+    padding: clamp(24px, 6vw, 55px);
+    position: relative;
+}
+
+.letter-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose);
+}
+
+.letter-text {
+    font: 1.1rem/1.95 'Playfair Display', serif;
+    margin: 25px 0;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.sign {
+    font: 1.8rem 'Caveat', cursive;
+    color: var(--rose);
+}
+
+.apology {
+    background: linear-gradient(135deg, #fff0f3, #eff6ff);
+}
+
+.apology-copy {
+    font: 1.08rem/1.95 'Playfair Display', serif;
+    white-space: pre-line;
+}
+
+.secret-card {
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.heart-button {
+    border: none;
+    background: transparent;
+    font-size: 4rem;
+    cursor: pointer;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    50% { transform: scale(1.1); }
+}
+
+.secret-message {
+    display: none;
+    font: italic 1.35rem/1.8 'Playfair Display', serif;
+    color: var(--rose);
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+footer span {
+    color: var(--rose);
+    font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 16px 5%;
+    }
+
+    .hero {
+        min-height: 68vh;
+        padding: 45px 18px;
+    }
+
+    .section {
+        padding: 45px 5%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .photo-placeholder {
+        min-height: 230px;
+    }
+
+    .primary,
+    .secondary {
+        min-height: 44px;
+        padding: 13px 18px;
+    }
+
+    .letter-text,
+    .apology-copy {
+        font-size: 1rem;
+        line-height: 1.85;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="brand">for my Karan ♡</div>
+    <div class="nav-note">a little corner of my heart</div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">made with love, just for you</div>
+
+        <h1>
+            To my favourite<br>
+            <em>human.</em>
+        </h1>
+
+        <p class="subtitle">
+            If I could put every little feeling I have for you
+            into one place, it would look a little something
+            like this. Every word, every memory, every tiny
+            detail — all for you. ♡
+        </p>
+
+        <a class="primary" href="#letter">
+            Open your letter ♡
+        </a>
+    </div>
+</header>
+
+<section class="section" id="memories">
+    <div class="section-head">
+        <div class="kicker">little pieces of us</div>
+        <h2>Our little memories ♡</h2>
+        <p>
+            Eight little spaces for moments I want to keep
+            close to my heart.
+        </p>
+    </div>
+
+    <div class="gallery" id="gallery"></div>
+
+    <p style="text-align:center;color:#8b7884;line-height:1.8;">
+        Choose a photo in each box to add your memories.
+    </p>
+</section>
+
+<section class="note-band">
+    <span>♡ a little thought ♡</span>
+
+    <blockquote>
+        "Some people feel like home, even when home
+        is just a voice, a conversation, or a person
+        you wish you could talk to forever."
+    </blockquote>
+
+    <span>and you feel like home to me.</span>
+</section>
+
+<section class="section" id="song">
+    <div class="section-head">
+        <div class="kicker">our little soundtrack</div>
+        <h2>A song for you 🎵</h2>
+        <p>
+            Add the song you want to share with him.
+        </p>
+    </div>
+
+    <div class="panel song-panel">
+        <p>
+            Choose your audio file below. Once selected,
+            press play to listen.
+        </p>
+
+        <input
+            type="file"
+            id="songFile"
+            accept="audio/*"
+            aria-label="Choose your song"
+        >
+
+        <audio id="music" controls>
+            Your browser does not support audio playback.
+        </audio>
+
+        <p>
+            Put on your headphones and let this song
+            remind you of us. ♡
+        </p>
+    </div>
+</section>
+
+<section class="section" id="letter">
+    <div class="section-head">
+        <div class="kicker">from my heart to yours</div>
+        <h2>Your little love letter 💌</h2>
+    </div>
+
+    <div class="letter-wrap">
+        <div class="letter-label">to my jaan</div>
+
+        <div class="letter-text">My Karan,
+
+Sometimes I wish I could gather every little feeling
+I have for you and place it right in your hands,
+so you could understand how much you mean to me.
+
+You have become such a beautiful part of my days.
+Talking to you, sharing silly things with you,
+and knowing that you are there makes ordinary
+moments feel special.
+
+I love the little things about you just as much
+as the big things. I love your kindness, your
+thoughtfulness, and the way you make me feel
+heard and understood.
+
+I cannot promise that I will always find the
+perfect words or that I will never make mistakes.
+But I can promise that I will keep trying to
+understand you, communicate honestly, and care
+for what we have.
+
+Thank you for being you.
+Thank you for being part of my world.
+
+No matter how many words I write, there will
+always be a little more love left to tell you.
+
+Yours, with all my heart ♡</div>
+
+        <div class="sign">Your Sanskriti ♡</div>
+    </div>
+</section>
+
+<section class="section apology" id="apology">
+    <div class="section-head">
+        <div class="kicker">something I want you to know</div>
+        <h2>I'm sorry, jaan. 🩷</h2>
+    </div>
+
+    <div class="panel">
+        <div class="apology-copy">Baby, if I have ever hurt you unintentionally,
+I am genuinely sorry.
+
+Sometimes I may not express myself properly,
+and sometimes my feelings may come out in ways
+I never intended. That does not mean your feelings
+matter any less to me.
+
+I never want you to feel that you cannot tell me
+when something hurts you. I want us to be able to
+talk honestly, listen to each other, and understand
+each other better.
+
+I care about you, about your happiness, and about
+the bond we are building together.
+
+I may not get everything right every time,
+but I want to keep learning and growing with you.
+
+You matter to me. Always remember that. ♡</div>
+    </div>
+</section>
+
+<section class="section" id="radha-krishna">
+    <div class="section-head">
+        <div class="kicker">a love that feels like a prayer</div>
+        <h2>Radha & Krishna 🪷</h2>
+    </div>
+
+    <div class="panel" style="text-align:center;">
+        <p style="font:1.15rem/2 'Playfair Display',serif;">
+            There is something so beautiful about a love
+            that is gentle, patient, and full of faith.
+        </p>
+
+        <p style="font:1.15rem/2 'Playfair Display',serif;">
+            When I think of Radha and Krishna, I think
+            of devotion, understanding, and a connection
+            that is bigger than words.
+        </p>
+
+        <p style="font:1.4rem 'Caveat',cursive;color:#b56b87;">
+            May our love always be filled with kindness,
+            faith, and the courage to understand each other. ♡
+        </p>
+
+        <div style="font-size:2rem;">🪷 🦚 🩷</div>
+    </div>
+</section>
+
+<section class="section" id="secret">
+    <div class="section-head">
+        <div class="kicker">psst... something for you</div>
+        <h2>A tiny secret ♡</h2>
+        <p>There's something hidden behind this heart.</p>
+    </div>
+
+    <div class="secret-card">
+        <button
+            class="heart-button"
+            id="heartButton"
+            aria-label="Reveal secret message"
+        >💗</button>
+
+        <div class="secret-message" id="secretMessage">
+            If I had to choose a favourite notification,
+            a favourite conversation, and a favourite
+            person to tell my little stories to,
+            I would choose you again and again.
+
+            <br><br>
+
+            You are loved more than these little words
+            could ever explain. ♡
+        </div>
+    </div>
+</section>
+
+<footer>
+    <span>♡</span>
+    <p>Made with love, for my Karan.</p>
+    <p>One little website, a thousand little feelings.</p>
+</footer>
+
+<script>
+/* Create eight photo boxes */
+const gallery = document.getElementById("gallery");
+
+for (let i = 1; i <= 8; i++) {
+    const card = document.createElement("div");
+    card.className = "photo-card";
+
+    card.innerHTML = `
+        <div class="photo-placeholder" id="placeholder${i}">
+            ♡<br>
+            Your memory ${i}<br>
+            Add a photo below
+        </div>
+
+        <img
+            id="photo${i}"
+            alt="Memory ${i}"
+        >
+
+        <input
+            type="file"
+            accept="image/*"
+            aria-label="Choose memory photo ${i}"
+            id="photoInput${i}"
+        >
+
+        <div class="caption">Memory ${i} ♡</div>
+    `;
+
+    gallery.appendChild(card);
+
+    document
+        .getElementById(`photoInput${i}`)
+        .addEventListener("change", function(event) {
+            const file = event.target.files[0];
+
+            if (!file) return;
+
+            if (!file.type.startsWith("image/")) {
+                alert("Please choose an image file.");
+                return;
+            }
+
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const img = document.getElementById(`photo${i}`);
+                img.src = e.target.result;
+                img.style.display = "block";
+
+                document.getElementById(
+                    `placeholder${i}`
+                ).style.display = "none";
+            };
+
+            reader.readAsDataURL(file);
+        });
+}
+
+/* Music player */
+const songInput = document.getElementById("songFile");
+const music = document.getElementById("music");
+let currentAudioURL = null;
+
+songInput.addEventListener("change", function(event) {
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    if (!file.type.startsWith("audio/")) {
+        alert("Please choose an audio file.");
+        return;
+    }
+
+    if (currentAudioURL) {
+        URL.revokeObjectURL(currentAudioURL);
+    }
+
+    currentAudioURL = URL.createObjectURL(file);
+    music.src = currentAudioURL;
+    music.load();
+});
+
+/* Reveal secret message */
+document
+    .getElementById("heartButton")
+    .addEventListener("click", function() {
+        const message = document.getElementById("secretMessage");
+
+        if (message.style.display === "block") {
+            message.style.display = "none";
+        } else {
+            message.style.display = "block";
+        }
+    });
+</script>
+
+</body>
+</html>
